@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @font-face {
+        font-family: "hank-e-bold";
+        src: url("assets/fonts/static/HankenGrotesk-ExtraBold.ttf");
+      }
+
+      @font-face {
+        font-family: "hank-bold";
+        src: url("assets/fonts/static/HankenGrotesk-Bold.ttf");
+      }
+
+      @font-face {
+        font-family: "hank-medium";
+        src: url("assets/fonts/static/HankenGrotesk-Medium.ttf");
+      }
+
+      @font-face {
+        font-family: "hank";
+        src: url("assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+      }
+
+      * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        max-width: 1440px;
+      }
+
+      .main-container {
+        display: flex;
+        max-width: 500px;
+        width: auto;
+        min-height: 350px;
+        height: fit-content;
+        box-shadow: 5px 10px 10px rgb(0, 0, 0, 0.3);
+        border-radius: 25px;
+      }
+
+      .first-section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+        border-radius: 25px;
+        color: #fff;
+        justify-content: space-between;
+        padding: 20px 50px;
+        max-width: 250px;
+        flex: 1;
+      }
+
+      .f-sec-title {
+        font-family: "hank-medium";
+        color: hsl(241, 100%, 89%);
+      }
+
+      .score {
+        width: 130px;
+        height: 130px;
+        background: linear-gradient(
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+        align-self: center;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+      }
+      .score span:first-child {
+        font-size: 50px;
+        font-family: "hank-e-bold";
+      }
+
+      .score span:last-child {
+        font-size: 12px;
+        font-family: "hank-medium";
+        font-weight: 100;
+        color: hsl(241, 100%, 89%);
+      }
+
+      .great {
+        font-size: 30px;
+        font-family: "hank-bold";
+      }
+
+      .first-section p {
+        font-size: 12px;
+        font-family: "hank";
+        color: hsl(241, 100%, 89%);
+        margin-bottom: 20px;
+      }
+
+      .second-section {
+        flex: 1;
+        max-width: 250px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: space-between;
+        width: 250px;
+      }
+
+      h4 {
+        font-size: 15px;
+        font-family: "hank-bold";
+        color: hsl(224, 30%, 27%);
+      }
+
+      .second-section div {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .display-text {
+        position: absolute;
+        left: 20%;
+      }
+
+      .reaction {
+        background-color: hsla(0, 100%, 67%, 0.1);
+        color: hsl(0, 100%, 67%);
+      }
+
+      .memory {
+        background-color: hsla(39, 100%, 56%, 0.1);
+        color: hsl(39, 100%, 56%);
+      }
+
+      .Verbal {
+        background-color: hsla(166, 100%, 37%, 0.1);
+        color: hsl(166, 100%, 37%);
+      }
+
+      .Visual {
+        background-color: hsla(234, 85%, 45%, 0.1);
+        color: hsl(234, 85%, 45%);
+      }
+
+      button {
+        background-color: hsl(224, 30%, 27%);
+        color: #fff;
+        padding: 10px 0;
+        font-family: "hank";
+        border-radius: 20px;
+        margin-bottom: 10px;
+        border: none;
+      }
+
+      @media (max-width: 700px) {
+        body {
+          height: auto;
+        }
+        .main-container {
+          flex-direction: column;
+          border-radius: 0;
+        }
+
+        .first-section {
+          border-top-right-radius: 0;
+          border-top-left-radius: 0;
+          gap: 1rem;
+        }
+        .second-section {
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="first-section">
+        <span class="f-sec-title"> Your Result </span>
+        <span class="score"> <span>76</span> <span> of 100 </span></span>
+        <span class="great"> Great </span>
+        <p>
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+      <div class="second-section">
+        <h4>Summary</h4>
+        <div class="reaction">
+          <img src="assets/images/icon-reaction.svg" alt="" />
+          <span class="display-text">Reaction </span
+          ><span><b>80</b> / 100</span>
+        </div>
+        <div class="memory">
+          <img src="assets/images/icon-memory.svg" alt="" />
+          <span class="display-text">Memory </span>
+          <span>92 / 100</span>
+        </div>
+        <div class="Verbal">
+          <img src="assets/images/icon-verbal.svg" alt="" />
+          <span class="display-text">Verbal </span><span>61 / 100</span>
+        </div>
+        <div class="Visual">
+          <img src="assets/images/icon-visual.svg" alt="" />
+          <span class="display-text">Visual </span><span>72 / 100</span>
+        </div>
+        <button>Continue</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/Imemario77">Ime Mario Jeremiah Chukwuekwu</a>.
+    </div>
+  </body>
+</html>
