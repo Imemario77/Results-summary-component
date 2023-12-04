@@ -57,13 +57,13 @@
         align-items: center;
         flex-direction: column;
         height: 100vh;
+        width: 100%;
         max-width: 1440px;
       }
 
       .main-container {
         display: flex;
-        max-width: 500px;
-        width: auto;
+        width: 500px;
         min-height: 350px;
         height: fit-content;
         box-shadow: 5px 10px 10px rgb(0, 0, 0, 0.3);
@@ -191,22 +191,28 @@
       .black-txt {
         color: black;
       }
-      @media (max-width: 700px) {
+      @media (max-width: 550px) {
         body {
           height: auto;
         }
         .main-container {
           flex-direction: column;
+          width: 100%;
           border-radius: 0;
+          box-shadow: none;
         }
 
         .first-section {
           border-top-right-radius: 0;
           border-top-left-radius: 0;
           gap: 1rem;
+          max-width: 100%;
+          width: 100vw;
         }
         .second-section {
           gap: 1rem;
+          max-width: 100%;
+          width: 100%;
         }
       }
     </style>
